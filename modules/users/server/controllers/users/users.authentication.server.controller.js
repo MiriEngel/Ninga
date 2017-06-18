@@ -89,7 +89,8 @@ exports.oauthCall = function (strategy, scope) {
       req.session.redirect_to = req.query.redirect_to;
 
     // Authenticate
-    passport.authenticate(strategy, scope)(req, res, next);
+     // passport.authenticate(strategy, scope)(req, res, next);
+	 passport.authenticate('facebook', { authType: 'reauthenticate', scope:scope })(req, res, next);
   };
 };
 
@@ -202,7 +203,7 @@ exports.saveOAuthUserProfile = function (req, providerUserProfile, done) {
         user.additionalProvidersData = {};
       }
 
-      user.additionalProvidersData[providerUserProfile.provider] = providerUserProfile.providerData;
+      user.additionalProvidersData[user.additionalProvidersData.length] = providerUserProfile.providerData;
 
       // Then tell mongoose that we've updated the additionalProvidersData field
       user.markModified('additionalProvidersData');

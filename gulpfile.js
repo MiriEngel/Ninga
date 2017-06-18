@@ -49,12 +49,12 @@ gulp.task('env:prod', function () {
 gulp.task('nodemon', function () {
 
   var nodeVersions = process.versions;
-  var debugArgument = '--debug';
+  var debugArgument = '--inspect';
   switch (nodeVersions.node.substr(0, 1)) {
     case '4':
     case '5':
     case '6':
-      debugArgument = '--debug';
+      debugArgument = '--inspect';
       break;
     case '7':
       debugArgument = '--inspect';

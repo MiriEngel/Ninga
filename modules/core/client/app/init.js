@@ -10,6 +10,8 @@
     .module(app.applicationModuleName)
     .config(bootstrapConfig);
 
+	
+	
   bootstrapConfig.$inject = ['$compileProvider', '$locationProvider', '$httpProvider', '$logProvider'];
 
   function bootstrapConfig($compileProvider, $locationProvider, $httpProvider, $logProvider) {

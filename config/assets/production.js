@@ -25,6 +25,7 @@ module.exports = {
         'public/lib/ng-file-upload/ng-file-upload.min.js',
         'public/lib/owasp-password-strength-test/owasp-password-strength-test.js',
         // endbower
+	
       ]
     },
     css: 'public/dist/application*.min.css',
